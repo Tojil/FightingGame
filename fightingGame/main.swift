@@ -1,12 +1,10 @@
 //
 //  main.swift
-//  fightingGame
+//  jeu de combat
 //
-//  Created by SCS on 15/11/2019.
+//  Created by SCS on 07/11/2019.
 //  Copyright © 2019 Sergio Canto. All rights reserved.
 //
 
-import Foundation
-
-print("Hello, World!")
-
+let game = Game()
+    game.start()
