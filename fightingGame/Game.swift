@@ -8,44 +8,108 @@
 
 import Foundation
 
+// Clase Game ou ça va derouler les parties
 class Game {
     
-    var teams = [Team]()
+    // MARK: - Properties
     
+    private var teams = [Team]()
+    private var sumOfParts = 0
+
     //MARK: - Methodes
+    
+    // Ici on appelle la Methode Start qui demarre le jeu
     func start() {
         createTeams()
         fight()
+        showGameSettings()
     }
-
-    func createTeams() {
+    
+    // Cette méthode va constituer les equipes des joueurs equipe 1 et equipe 2
+    private func createTeams() {
         for i in 0..<2 {
+            print("")
+            print("================================")
             print("Team number \(i + 1)")
             let team = Team()
             teams.append(team)
         }
     }
     
-    func fight() {
-        while true {
+    // cette méthode va nous donner l'equipe gagnant
+    private func showGameSettings() {
+        for (index, team) in teams.enumerated() {
+            if !team.isDead() {
+                print("")
+                print("================================")
+                print("")
+                print("The Winner is team \(index + 1)")
+                print("")
+            }
+        
+        }
+        for team in teams {
+            team.toDescribe()
+        }
+        
+        print("================================")
+        print("")
+        print("Number of parts that have been played = \(sumOfParts)")
+        print("")
+        print("================================")
+        print("")
+        
+    }
+
+    // Ça c'est la methode qui fait apparaitre le coffre magic de façon aléatoire et permet de changer son arme pour une arme plus puissant
+    private func chestAppear(character: Character) {
+        let randomInt = Int(arc4random_uniform(UInt32(4)))
+        if randomInt == 2 {
+            print("")
+            print("Congratulations you won a Magic Chest")
+            print("")
+            character.weapon = Hammer()
+            print("\(character.name) You win the new weapon Hammer")
+            print("")
+        }
+    }
+    // Dans cette méthode les jouers vont pouvoir combattre
+    private func fight() {
+
+            while true {
+            sumOfParts += 1
+
             for i in 0..<2 {
                 print("================================")
                 print("")
                 print("Team number \(i + 1) select your character")
                 print("")
+                
                 teams[i].toDescribe()
                 
+                print("")
+                print("===============================")
+                print("")
+                
                 let character = teams[i].characters[userChoice() - 1]
+                chestAppear(character: character)
                 whatToDo()
+                
                 let choiceUser = healOrAttack()
+                
                 if choiceUser == 1 {
+                    print("")
                     print("================================")
                     print("")
                     print("Choose the character to attack")
                     print("")
-                    
+
                     if i == 0 {
                         teams[i + 1].toDescribe()
+                        print("")
+                        print("===============================")
+                        print("")
+                        
                         let enemyCharacter = teams[i + 1].characters[userChoice() - 1]
                         character.attack(target: enemyCharacter)
                         if teams[i + 1].isDead() {
@@ -53,31 +117,41 @@ class Game {
                         }
                     } else {
                         teams[i - 1].toDescribe()
-                        
+                        print("")
+                        print("================================")
+                        print("")
+
                         let enemyCharacter = teams[i - 1].characters[userChoice() - 1]
                         character.attack(target: enemyCharacter)
                         if teams[i - 1].isDead() {
                             return
                         }
                     }
-                } else {
+                }else {
+                    print("")
                     print("================================")
                     print("")
                     print("Choose the character to heal")
                     print("")
                     teams[i].toDescribe()
+                    print("")
+                    print("===============================")
+                    print("")
+                    
                     let healCharacter = teams[i].characters[userChoice() - 1]
+
                     character.heal(target: healCharacter)
 
                 }
                 
                 
             }
+            
         }
     }
     
-    
-    func userChoice() -> Int {
+    // cette méthode nous permet de transformer le choix de l'utilisateur de type String à type Int pour le choix des personages qui combattent
+    private func userChoice() -> Int {
         var userChoice = 0
         repeat {
             if let data = readLine() {
@@ -85,12 +159,13 @@ class Game {
                     userChoice = dataToInt
                 }
             }
-            
         } while userChoice != 1 && userChoice != 2 && userChoice != 3
         return userChoice
     }
+
     
-    func healOrAttack() -> Int {
+    // Ici on declare la méthode soigner ou attaquer avec pour retour un chiffre entier
+    private func healOrAttack() -> Int {
         var userChoice = 0
         repeat {
             if let data = readLine() {
@@ -98,128 +173,25 @@ class Game {
                     userChoice = dataToInt
                 }
             }
-            
         } while userChoice != 1 && userChoice != 2
         return userChoice
     }
     
     
-    
-    func whatToDo() {
+    // Interface du menu quoi faire
+    private func whatToDo() {
+        print("")
         print("================================")
         print("")
         print("Which Choice ?")
         print("")
-        print("1. attack")
+        print("1. Attack")
         print("2. Heal")
         print("")
+        print("================================")
+        print("")
     }
-    
-    
-    func improveOrAttack() {
-        while true {
-            for i in 1...2 {
-                print("===============================")
-                print("")
-                print("Team number \(i + 1) select what to do")
-                print("")
-                whatToDo()
-                
-                if i == 1 {
-                    
-                } else {
-                    
-                }
-                return
-            }
-        }
-    }
-    
-    
 }
-
-
-
-
-
-
-
-
-
-//func fight() {
-//    while true {
-//        for i in 0..<2 {
-//            print("================================")
-//            print("")
-//            print("Team number \(i + 1) select your character")
-//            print("")
-//            teams[i].toDescribe()
-//
-//            let character = teams[i].characters[userChoice() - 1]
-//            print("================================")
-//            print("")
-//            print("Choose the character to attack")
-//            print("")
-//
-//            if i == 0 {
-//                teams[i + 1].toDescribe()
-//                let enemyCharacter = teams[i + 1].characters[userChoice() - 1]
-//                character.attack(target: enemyCharacter)
-//                if teams[i + 1].isDead() {
-//                    return
-//                }
-//            } else {
-//                teams[i - 1].toDescribe()
-//
-//                let enemyCharacter = teams[i - 1].characters[userChoice() - 1]
-//                character.attack(target: enemyCharacter)
-//                if teams[i - 1].isDead() {
-//                    return
-//                }
-//            }
-//
-//        }
-//
-//    }
-//}
-
-
-
-
-//    func fight() {
-//        var userChoice = 0
-//        print("Team number 1 select your character")
-//        teams[0].toDescribe()
-//        repeat {
-//            if let data = readLine() {
-//                if let dataToInt = Int(data) {
-//                    userChoice = dataToInt
-//                }
-//            }
-//
-//        } while userChoice != 1 && userChoice != 2 && userChoice != 3
-//        let character = teams[0].characters[userChoice - 1]
-//        print("Choose the character to attack")
-//        userChoice = 0
-//        teams[1].toDescribe()
-//        repeat {
-//            if let data = readLine() {
-//                if let dataToInt = Int(data) {
-//                    userChoice = dataToInt
-//                }
-//            }
-//
-//        } while userChoice != 1 && userChoice != 2 && userChoice != 3
-//        let enemyCharacter = teams[1].characters[userChoice - 1]
-//        character.attack(target: enemyCharacter)
-//    }
-
-
-
-
-
-
-
 
 
 

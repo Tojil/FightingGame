@@ -8,9 +8,10 @@
 
 import Foundation
 
-class Archer: Character {
+// Ici Archer est un de nos combattants qui hérite des propriétés de la classe Character
+final class Archer: Character {
     init(name: String) {
-        super.init(name: name, weapon: Bow(), life: 110, description: "The greatest Arrow")
+        super.init(name: name, weapon: Bow(), life: 20)
         print("")
 }
 }

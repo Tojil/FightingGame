@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A5F1CDA23C6172300828B8B /* Hammer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A5F1CD923C6172300828B8B /* Hammer.swift */; };
 		1A74B678237E15DE00A6190E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A74B677237E15DE00A6190E /* main.swift */; };
 		1A74B68E237E166D00A6190E /* Archer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A74B67E237E166D00A6190E /* Archer.swift */; };
 		1A74B68F237E166D00A6190E /* Bow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A74B67F237E166D00A6190E /* Bow.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A5F1CD923C6172300828B8B /* Hammer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hammer.swift; sourceTree = "<group>"; };
 		1A74B674237E15DE00A6190E /* fightingGame */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fightingGame; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A74B677237E15DE00A6190E /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		1A74B67E237E166D00A6190E /* Archer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Archer.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				1A74B68D237E166D00A6190E /* Weapon.swift */,
+				1A5F1CD923C6172300828B8B /* Hammer.swift */,
 				1A74B67F237E166D00A6190E /* Bow.swift */,
 				1A74B682237E166D00A6190E /* Kama.swift */,
 				1A74B686237E166D00A6190E /* Sais.swift */,
@@ -193,6 +196,7 @@
 				1A74B691237E166D00A6190E /* Game.swift in Sources */,
 				1A74B697237E166D00A6190E /* Samurai.swift in Sources */,
 				1A74B69C237E166D00A6190E /* Tessen.swift in Sources */,
+				1A5F1CDA23C6172300828B8B /* Hammer.swift in Sources */,
 				1A74B696237E166D00A6190E /* Sais.swift in Sources */,
 				1A74B692237E166D00A6190E /* Kama.swift in Sources */,
 				1AAEFA992387079400CA19CE /* Ninja.swift in Sources */,

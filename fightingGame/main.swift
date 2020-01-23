@@ -6,5 +6,6 @@
 //  Copyright © 2019 Sergio Canto. All rights reserved.
 //
 
+//On declare une instance
 let game = Game()
     game.start()

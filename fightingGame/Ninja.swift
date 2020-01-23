@@ -8,9 +8,10 @@
 
 import Foundation
 
-class Ninja: Character{
+// Ici Ninja est un de nos combattants qui hérite des propriétés de la classe Character
+final class Ninja: Character{
     init(name: String) {
-        super.init(name: name, weapon: Sais(), life: 110, description: "The greatest warrior")
+        super.init(name: name, weapon: Sais(), life: 20)
         print("")
     }
 }

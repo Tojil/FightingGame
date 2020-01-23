@@ -8,16 +8,15 @@
 
 import Foundation
 
+// Weapon class with attributes common to all weapons
 class Weapon {
-    var damage: Int
-    var magicImprove: Int
-    
-    
+    let damage: Int
+    let magicImprove: Int
+
     init(damage: Int, magicImprove: Int) {
         self.damage = damage
         self.magicImprove = magicImprove
     }
-    
 }
 
 
