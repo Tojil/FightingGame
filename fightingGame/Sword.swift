@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Sword est une arme qui hérite des propriétés de la classe Weapon
+// Sword is a weapon that inherits the properties of the Weapon class
 final class Sword: Weapon {
     init() {
         super.init(damage: 10, magicImprove: 5)

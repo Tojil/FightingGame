@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Ici Kama est une arme qui hérite des propriétés de la classe Weapon
+// Kama is a weapon that inherits the properties of the Weapon class
 final class Kama: Weapon {
     init() {
         super.init(damage: 9, magicImprove: 5)

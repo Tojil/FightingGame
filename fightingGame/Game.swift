@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Clase Game ou ça va derouler les parties
+// Class Game where it will play the games
 class Game {
     
     // MARK: - Properties
@@ -18,14 +18,14 @@ class Game {
 
     //MARK: - Methodes
     
-    // Ici on appelle la Methode Start qui demarre le jeu
+    // The Start method which starts the creation of teams, fights and end of game statistics
     func start() {
         createTeams()
         fight()
         showGameSettings()
     }
     
-    // Cette méthode va constituer les equipes des joueurs equipe 1 et equipe 2
+    // This method will constitute the teams of the players
     private func createTeams() {
         for i in 0..<2 {
             print("")
@@ -36,7 +36,7 @@ class Game {
         }
     }
     
-    // cette méthode va nous donner l'equipe gagnant
+    // This method will give us the winning team
     private func showGameSettings() {
         for (index, team) in teams.enumerated() {
             if !team.isDead() {
@@ -61,7 +61,7 @@ class Game {
         
     }
 
-    // Ça c'est la methode qui fait apparaitre le coffre magic de façon aléatoire et permet de changer son arme pour une arme plus puissant
+    // That's the method that brings up the chest magic random and can change his weapon for a weapon more powerful
     private func chestAppear(character: Character) {
         let randomInt = Int(arc4random_uniform(UInt32(4)))
         if randomInt == 2 {
@@ -73,7 +73,7 @@ class Game {
             print("")
         }
     }
-    // Dans cette méthode les jouers vont pouvoir combattre
+    // In this method players will be able to take turns fighting
     private func fight() {
 
             while true {
@@ -143,14 +143,11 @@ class Game {
                     character.heal(target: healCharacter)
 
                 }
-                
-                
             }
-            
         }
     }
     
-    // cette méthode nous permet de transformer le choix de l'utilisateur de type String à type Int pour le choix des personages qui combattent
+    // this method allows us to recover the choice of the user
     private func userChoice() -> Int {
         var userChoice = 0
         repeat {
@@ -164,7 +161,7 @@ class Game {
     }
 
     
-    // Ici on declare la méthode soigner ou attaquer avec pour retour un chiffre entier
+    // this method allows us to recover the choice of the user
     private func healOrAttack() -> Int {
         var userChoice = 0
         repeat {
@@ -178,7 +175,7 @@ class Game {
     }
     
     
-    // Interface du menu quoi faire
+    // Interface whatToDo
     private func whatToDo() {
         print("")
         print("================================")
@@ -194,27 +191,3 @@ class Game {
 }
 
 
-
-
-
-
-
-
-
-
-
-//1. Initialiser le jeu en demandant à chaque joueur de sélectionner les personnages de son équipe. Le joueur devra choisir pour chaque personnage un nom différent de tous les autres personnages déjà créés dans le jeu.
-//
-//2. Réaliser le combat au tour par tour. L’idée, c’est donc que le joueur 1 puisse choisir un personnage de son équipe, choisir le personnage qui va subir l’action (dans l’équipe adverse en cas d’attaque ou dans son équipe en cas de soin), de réaliser l’action, puis de vérifier si la partie est terminée, sinon c’est au tour du joueur 2 ;
-//
-//3. Une fois la partie terminée (lorsque tous les personnages d’une équipe sont morts), tu affiches le joueur qui a gagné et les statistiques de jeu : le nombre de tours et la liste des personnages des deux équipes avec leurs propriétés (point de vie, etc.).
-//
-//Si je résume la base du jeu : celui-ci est composé de deux joueurs. Chaque joueur a une équipe composée de trois personnages. Chaque personnage a des points de vie, un nom et une arme.
-//
-//Ah oui, j’ai oublié de te préciser, les personnages attaquent avec une arme. C’est elle qui doit déterminer les dégâts que le personnage va réaliser. Une autre fonctionnalité qu’il faut absolument intégrer (j’aimerais ajouter un peu de hasard dans le jeu) : un coffre peut apparaître devant un personnage quand celui joue son tour. Ce coffre contiendra forcément une arme (plus ou moins puissante que celle existante).
-//
-//J’attends avec impatience ton projet !
-//
-//Si tu pouvais aussi le commenter au maximum. Je sais, ça revient à dire: « n’oublie pas de respirer », mais comme c’est moi qui vais utiliser ton projet, et que je ne suis pas une développeuse (même si j’ai des bases), c’est encore plus important.
-//
-//Merci beaucoup !

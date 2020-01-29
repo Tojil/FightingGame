@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Scepter est une arme qui hérite des propriétés de la classe Weapon
+// Scepter is a weapon that inherits the properties of the Weapon class
 final class Scepter: Weapon {
     init() {
         super.init(damage: 12, magicImprove: 5)

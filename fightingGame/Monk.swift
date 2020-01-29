@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Ici Monk est un de nos combattants qui hérite des propriétés de la classe Character
+// Here Monk is one of our fighters who inherits the properties of the Character class
 final class Monk: Character{
     init(name: String) {
         super.init(name: name, weapon: Tessen(), life: 20)

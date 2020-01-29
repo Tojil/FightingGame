@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Classe Character avec les propriétés comunes à tous les personnages
+// Character class with properties common to all characters
 class Character {
     
     // MARK: - Vars
@@ -33,7 +33,7 @@ class Character {
     
     // MARK: - Methods
     
-    // Ici cette méthode nous sert pour attaquer le personnage choisi
+    // In this method we attack the character if he is still alive, and we display the fighters and the damages
     func attack(target: Character) {
         if target.life > 0 && life > 0{
             target.life -= weapon.damage
@@ -58,7 +58,7 @@ class Character {
        
     }
     
-    // Cette méthode va soigner le personnage choisi
+    // In this method we heal the character if he is still alive, and we display the fighters who heal
     func heal(target: Character) {
         if target.life > 0 && life > 0 {
             target.life += weapon.magicImprove
@@ -74,7 +74,7 @@ class Character {
         }
     }
     
-    // Cette méthode va afficher la description du personnage avec son nom,les degats de son arme, la vie et le soin
+    // This method will display the description of the character with his name, the damage of his weapon, the life and the care.
     func toDescribe(index: Int) {
         print("\(index). \(name) - Damage of the Weapon: \(weapon.damage) - Life \(life) - Care \(weapon.magicImprove) ")
     }

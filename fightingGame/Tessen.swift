@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Tessen est une arme qui hérite des propriétés de la classe Weapon
+// Tessen is a weapon that inherits the properties of the Weapon class
 final class Tessen: Weapon {
     init() {
         super.init(damage: 8, magicImprove: 5)

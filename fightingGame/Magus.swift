@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Ici Magus est un de nos combattants qui hérite des propriétés de la classe Character
+// Here Magus is one of our fighters who inherits the properties of the Character class
 final class Magus: Character{
     init(name: String) {
         super.init(name: name, weapon: Scepter(), life: 20)

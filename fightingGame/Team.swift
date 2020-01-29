@@ -8,7 +8,7 @@
 
 import Foundation
 
-// CLasse Team où l'on va assigner trois personnages par equipe
+// Team class where the player will choose three characters to form his team, giving them unique names
 class Team {
     
     // MARK: - Properties
@@ -23,7 +23,7 @@ class Team {
     
     // MARK: - Methods
     
-    // Ici on declare la méthode createCharacters qui va nous permettre de choisir les trois personnages par équipe
+    // createCharacters is the method that will integrate the three characters by team
     private func createCharacters() {
         for i in 0..<numberOfCharacter {
             print("")
@@ -33,7 +33,7 @@ class Team {
         }
     }
     
-    // Cette méthode elle va permettre le choix des personnages et de creer un nom unique pour chaque personnage choisi en fonction du shouhait de l'utilisateur
+    // This method will allow you to choose the characters and give them a unique name
     private func createCharacter() -> Character? {
         var userChoice = 0
         characterChoiceList()
@@ -66,7 +66,7 @@ class Team {
         
     }
     
-    // Cette Méthode nous permet de savoir quand les personnages de chaque équipe sont morts
+    // This Method lets us know when the characters of each team died
     func isDead() -> Bool {
         for character in characters {
             if character.life > 0 {
@@ -76,7 +76,7 @@ class Team {
         return true
     }
     
-    // Cette Méthode nous affiche les characteristiques de chaque personnages dans les équipes
+    // This Method shows us the characteristics of each character in the teams
     func toDescribe() {
         for i in 0..<characters.count {
             characters[i].toDescribe(index: i + 1)
@@ -103,7 +103,7 @@ class Team {
     }
     
     
-    // Cette méthode nous permet d'assigner un nom unique a chaque personage choisi
+    // This method allows us to assign a unique name to each character chosen
     private func uniqueCharacterName() -> String {
         var userChoice: String = ""
         print("")

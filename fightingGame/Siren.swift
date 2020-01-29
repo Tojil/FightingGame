@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Ici Siren est un de nos combattants qui hérite des propriétés de la classe Character
+// Here Siren is one of our fighters who inherits the properties of the Character class
 final class Siren: Character{
     init(name: String) {
         super.init(name: name, weapon: Kama(), life: 20)

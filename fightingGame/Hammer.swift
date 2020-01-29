@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Ici Hammer est l'arme qui se trouve dans le coffre magic
+// Hammer is the weapon of the magic chest and inherits the properties of the Weapon class.
 final class Hammer: Weapon {
     init() {
         super.init(damage: 20, magicImprove: 20)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Ici Archer est un de nos combattants qui hérite des propriétés de la classe Character
+// Here Archer is one of our fighters who inherits the properties of the Character class
 final class Archer: Character {
     init(name: String) {
         super.init(name: name, weapon: Bow(), life: 20)

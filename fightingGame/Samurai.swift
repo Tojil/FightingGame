@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Ici Samurai est un de nos combattants qui hérite des propriétés de la classe Character
+// Here Samurai is one of our fighters who inherits the properties of the Character class
 final class Samurai: Character{
     init(name: String) {
         super.init(name: name, weapon: Sword(), life: 20)

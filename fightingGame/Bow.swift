@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Ici Bow est une arme qui hérite des propriétés de la classe Weapon
+// Bow is a weapon that inherits the properties of the Weapon class
 final class Bow: Weapon {
     init() {
         super.init(damage: 10, magicImprove: 5)

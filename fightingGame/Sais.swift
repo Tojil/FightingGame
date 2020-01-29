@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Sais est une arme qui hérite des propriétés de la classe Weapon
+// Sais is a weapon that inherits the properties of the Weapon class
 final class Sais: Weapon {
     init() {
         super.init(damage: 8, magicImprove: 5)
